@@ -8,7 +8,10 @@ WQX_NUTRIENT_TMDL_Regression <- function(SITE=NULL, TYPE=NULL, TARGET.CHLA=NULL)
   if(length(TYPE) < 1){
     stop("Please enter a regression type! Choose from 'multiple', 'TN', or 'TP'")
   }
-
+  if(length(TARGET.CHLA) < 1){
+    warning("TARGET.CHLA = NULL: Chlorophyll a target not entered, setting to 20 ug/L as a default")
+    TARGET.CHLA <- 20
+  }
   ## Extract the data
   polk.data <- readWQPdata(siteNumbers = SITE)
   
