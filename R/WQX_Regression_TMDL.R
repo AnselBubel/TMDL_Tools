@@ -1,4 +1,4 @@
-WQX_NUTRIENT_TMDL_Regression <- function(SITE=NULL, TYPE=NULL){
+WQX_NUTRIENT_TMDL_Regression <- function(SITE=NULL, TYPE=NULL, TARGET.CHLA=NULL){
   require(dataRetrieval)
   require(reshape2)
   
