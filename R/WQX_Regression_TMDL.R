@@ -67,9 +67,9 @@ WQX_NUTRIENT_TMDL_Regression <- function(SITE=NULL, TYPE=NULL, TARGET.CHLA=NULL)
     abline(polk.lm.n, col="blue", lwd=2)
     
     ## calculate TMDL reductions based on Single Regressions
-    TN.TMDL.conc <- (20 - polk.lm.n$coefficients[1][[1]])/polk.lm.n$coefficients[2][[1]]
+    TN.TMDL.conc <- (TARGET.CHLA - polk.lm.n$coefficients[1][[1]])/polk.lm.n$coefficients[2][[1]]
     TN.TMDL.conc ## Does this seem reasonable???
-    print("Chlorophyll target = 20 ug/L")
+    print(paste("Chlorophyll target = ",TARGET.CHLA," ug/L"))
     print(paste("Total nitrogen  target =", round(TN.TMDL.conc, digits=2),"mg/L"))
     return("Total phosphorus target = not calculated!")
   } 
